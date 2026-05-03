@@ -7,6 +7,7 @@ import Header from "../../components/Header";
 import SliderControl from "../../components/SliderControl";
 import AnalysisPanel from "../../components/AnalysisPanel";
 import Card from "../../components/Card";
+import DashboardClient from "./DashboardClient";
 // import IntelFeed from "@/components/IntelFeed";
 
 export default function Dashboard() {
@@ -37,7 +38,8 @@ export default function Dashboard() {
           </div>
         </Card>
 
-        <AnalysisPanel params={scenario} />
+        {/* <AnalysisPanel params={scenario} /> */}
+        <DashboardClient/>
         {/* <IntelFeed host={scenario.host} /> */}
         
       </div>
