@@ -1,14 +1,17 @@
 import { mockSimulation } from "./mockSimulation";
-
+const baseUrl =
+  typeof window === "undefined"
+    ? process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
+    : "";
 export async function runSimulationAPI(params: any) {
   try {
-    const res = await fetch("/api/simulate", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(params),
-    });
+    const res = await fetch(`${baseUrl}/api/simulate`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(params),
+  });
 
     const data = await res.json();
 
